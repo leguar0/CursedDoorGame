@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<AnchorPane prefWidth="800" prefHeight="600" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="leguar.cursed_door.Controller">
+    <stylesheets>
+        <URL value="@styles/style.css"/>
+    </stylesheets>
+
+    <!-- TITLEBAR -->
+    <GridPane id="titleBar">
+        <Label styleClass="label" GridPane.columnIndex="0"/>
+
+        <Button fx:id="minimalizeButton" styleClass="button" onAction="#setMinimalizeButton" text="-"
+                GridPane.columnIndex="1"/>
+
+        <Button fx:id="exitButton" styleClass="button" onAction="#setExitButton" text="X" GridPane.columnIndex="2"/>
+    </GridPane>
+
+    <!-- MENUBAR -->
+    <GridPane fx:id="menuBar" id="menuBar" AnchorPane.topAnchor="30">
+        <Label fx:id="labelMenu" text="CURSED DOOR" styleClass="label" GridPane.rowIndex="0"/>
+
+        <Button styleClass="button" onAction="#setStartGameButton" text="Graj" GridPane.rowIndex="1"
+                GridPane.halignment="CENTER"/>
+
+        <Button styleClass="button" onAction="#setExitGameButton" text="Wyjdz" GridPane.rowIndex="2"
+                GridPane.halignment="CENTER"/>
+    </GridPane>
+
+    <!-- CHOICEPROFESSIONBAR -->
+    <GridPane fx:id="choiceProfessionBar" id="choiceProfessionBar" visible="false" AnchorPane.topAnchor="30">
+        <Label text="Wybierz klasę:" styleClass="label" GridPane.rowIndex="0"
+               GridPane.halignment="CENTER"/>
+
+        <GridPane styleClass="button" onMouseClicked="#setChoiceBerserkButton" GridPane.rowIndex="1"
+                  GridPane.halignment="CENTER">
+            <GridPane>
+                <ImageView fitWidth="50" fitHeight="50" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <Image url="@icon/halberd.png"/>
+                </ImageView>
+                <Label text="Berserk" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            </GridPane>
+        </GridPane>
+
+        <GridPane styleClass="button" onMouseClicked="#setChoiceDruidButton" GridPane.rowIndex="2"
+                  GridPane.halignment="CENTER">
+            <GridPane>
+                <ImageView fitWidth="50" fitHeight="50" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <Image url="@icon/sceptre.png"/>
+                </ImageView>
+                <Label text="Druid" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            </GridPane>
+        </GridPane>
+
+        <GridPane styleClass="button" onMouseClicked="#setChoiceArcherButton" GridPane.rowIndex="3"
+                  GridPane.halignment="CENTER">
+            <GridPane>
+                <ImageView fitWidth="50" fitHeight="50" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <Image url="@icon/bow.png"/>
+                </ImageView>
+                <Label text="Łucznik" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            </GridPane>
+        </GridPane>
+    </GridPane>
+
+    <!-- GAME -->
+    <GridPane fx:id="gameBar" id="gameBar" visible="false" AnchorPane.topAnchor="30">
+
+        <GridPane id="playerBar" GridPane.rowIndex="0" GridPane.columnIndex="0">
+            <Label fx:id="labelProfession" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                   GridPane.halignment="LEFT"/>
+
+            <Label fx:id="labelPower" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                   GridPane.halignment="LEFT"/>
+
+            <Button onAction="#setUpgradePower" styleClass="button" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                    GridPane.halignment="RIGHT" text="+"/>
+
+            <Label fx:id="labelHealth" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                   GridPane.halignment="LEFT"/>
+
+            <Button onAction="#setUpgradeHealth" styleClass="button" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                    GridPane.halignment="RIGHT" text="+"/>
+
+            <Label fx:id="labelEnergy" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                   GridPane.halignment="LEFT"/>
+
+            <Button onAction="#setUpgradeEnergy" styleClass="button" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                    GridPane.halignment="RIGHT" text="+"/>
+        </GridPane>
+
+        <GridPane id="statsBar" GridPane.rowIndex="0" GridPane.columnIndex="1">
+            <Label fx:id="labelCoins" GridPane.rowIndex="0"
+                   GridPane.halignment="CENTER"/>
+            <Label fx:id="labelKeys" GridPane.rowIndex="1"
+                   GridPane.halignment="CENTER"/>
+
+            <Label fx:id="labelDoorCounter" GridPane.rowIndex="2"
+                   GridPane.halignment="CENTER"/>
+        </GridPane>
+
+        <!-- LEFTDOOR -->
+        <GridPane fx:id="leftDoorStyle" styleClass="door" onMouseClicked="#setLeftDoor" GridPane.rowIndex="1"
+                  GridPane.columnIndex="0"
+                  GridPane.halignment="LEFT">
+            <ImageView fx:id="leftDoor" visible="false" GridPane.rowIndex="0" GridPane.columnIndex="0">
+            </ImageView>
+        </GridPane>
+
+        <Label fx:id="labelText" text="Wybierz drzwi" GridPane.rowIndex="1" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER"/>
+
+        <!-- RIGHTDOOR -->
+        <GridPane fx:id="rightDoorStyle" styleClass="door" onMouseClicked="#setRightDoor" GridPane.rowIndex="1"
+                  GridPane.columnIndex="2"
+                  GridPane.halignment="RIGHT">
+            <ImageView fx:id="rightDoor" visible="false" GridPane.rowIndex="0" GridPane.columnIndex="0">
+            </ImageView>
+        </GridPane>
+    </GridPane>
+
+    <!-- FIGHTBAR -->
+    <GridPane fx:id="fightBar" id="fightBar" visible="false" AnchorPane.topAnchor="30">
+
+        <GridPane GridPane.rowIndex="0" GridPane.columnIndex="1">
+            <Label text="WALKA!" GridPane.rowIndex="0"/>
+            <Label fx:id="roundCounter" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <!-- PLAYER -->
+        <GridPane styleClass="statsBar" GridPane.rowIndex="1" GridPane.columnIndex="0">
+            <ImageView GridPane.rowIndex="0">
+            </ImageView>
+            <Label fx:id="statsPlayer" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <!-- MOB -->
+        <GridPane styleClass="statsBar" GridPane.rowIndex="1" GridPane.columnIndex="2">
+            <ImageView GridPane.rowIndex="0">
+            </ImageView>
+            <Label fx:id="statsMob" GridPane.rowIndex="1"/>
+        </GridPane>
+    </GridPane>
+
+    <!-- FOOTERBAR -->
+    <GridPane id="footerBar" AnchorPane.bottomAnchor="0">
+        <Label text=".leguar" id="author" GridPane.columnIndex="0"/>
+        <Label text="v1.0" id="version" GridPane.columnIndex="1"/>
+    </GridPane>
+</AnchorPane>

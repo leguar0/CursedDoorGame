@@ -1,0 +1,192 @@
+*{
+    -fx-text-fill: #fff;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-font-weight: 800;
+    -fx-font-family: 'Tahoma';
+}
+
+/* TITLEBAR */
+
+#titleBar{
+    -fx-pref-width: 800px;
+    -fx-background-color: #5C4033;
+    -fx-pref-height: 30px;
+}
+
+#titleBar > .label{
+    -fx-pref-width: 750px;
+}
+
+#titleBar > .button{
+    -fx-background-color: #5C4033;
+    -fx-pref-width: 25px;
+    -fx-pref-Height: 25px;
+}
+
+.button:hover{
+    -fx-opacity: 0.80;
+    -fx-background-color: #87604e !important;
+}
+
+.button:pressed{
+    -fx-opacity: 0.5;
+    -fx-background-color: #87604e !important;
+}
+
+/* MENUBAR */
+#menuBar, #fightBar, #choiceProfessionBar, #gameBar{
+    -fx-vgap: 50px;
+    -fx-pref-width: 800px;
+    -fx-pref-height: 550px;
+    -fx-background-color: #70645a;
+}
+
+#menuBar > .label{
+    -fx-font-size: 30px;
+}
+
+#menuBar > .button{
+    -fx-background-color: #5C4033;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 30px;
+}
+
+/* CHOICEPROFESSIONBAR */
+#choiceProfessionBar > .label{
+    -fx-font-size:  30px;
+}
+
+#choiceProfessionBar > .button{
+    -fx-background-color: #5C4033;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 80px;
+    -fx-font-size: 15px;
+}
+
+/* GAMEBAR */
+
+#gameBar{
+    -fx-vgap: 20px;
+    -fx-hgap: 50px;
+    -fx-pref-width: 800px;
+    -fx-pref-height: 545px;
+    -fx-background-color: #70645a;
+}
+
+#gameBar > #playerBar{
+    -fx-vgap: 10px;
+    -fx-hgap: 10px;
+}
+
+#gameBar > #playerBar > .button{
+    -fx-background-color: #5C4033;
+    -fx-pref-width: 25px;
+    -fx-pref-height: 25px;
+}
+
+#gameBar > #statsBar{
+    -fx-background-color: #5C4033;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+}
+
+#gameBar > .door{
+    -fx-border-width: 10px;
+    -fx-border-color: #5C4033;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 380px;
+}
+
+#gameBar > .door{
+    -fx-border-width: 10px;
+    -fx-border-color: #5C4033;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 380px;
+}
+
+.mysteriousDoor{
+    -fx-background-color: #8f32ed;
+    -fx-animation: colorChange 2s infinite;
+}
+
+.mysteriousDoor:hover{
+    -fx-opacity: 0.75;
+    -fx-background-color: #af6df2 !important;
+}
+
+.mysteriousDoor:pressed{
+    -fx-opacity: 0.5;
+    -fx-background-color: #af6df2 !important;
+}
+
+.monstrousDoor{
+    -fx-background-color: #ed2f59;
+}
+
+.monstrousDoor:hover{
+    -fx-opacity: 0.75;
+    -fx-background-color: #e85676 !important;
+}
+
+.monstrousDoor:pressed{
+    -fx-opacity: 0.5;
+    -fx-background-color: #e85676 !important;
+}
+
+.emptyDoor{
+    -fx-background-color: #000000;
+}
+
+.emptyDoor:hover{
+    -fx-opacity: 0.75;
+    -fx-background-color: #1c1b1b !important;
+}
+
+.emptyDoor:pressed{
+    -fx-opacity: 0.5;
+    -fx-background-color: #1c1b1b !important;
+}
+
+.trapDoor{
+    -fx-background-color: #693636;
+}
+
+.trapDoor:hover{
+    -fx-opacity: 0.80;
+    -fx-background-color: #7a4141 !important;
+}
+
+.trapDoor:pressed{
+    -fx-opacity: 0.5;
+    -fx-background-color: #7a4141 !important;
+}
+
+/* FIGHTBAR */
+#fightBar{
+    -fx-hgap: 100px;
+}
+#fightBar > .statsBar{
+    -fx-vgap: 10px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 200px;
+    -fx-background-color: #5C4033;
+}
+
+/* FOOTERBAR */
+#footerBar{
+    -fx-pref-width: 800px;
+    -fx-pref-height: 25px;
+    -fx-background-color: #5C4033;
+}
+
+#footerBar > #author{
+    -fx-pref-height: 25px;
+    -fx-pref-width: 700px;
+}
+
+#footerBar > #version{
+    -fx-pref-height: 25px;
+    -fx-pref-width: 30px;
+}
