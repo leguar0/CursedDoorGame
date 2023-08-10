@@ -180,8 +180,5 @@ public class Game {
         roundCounter++;
         playerHero.setEnergy(-(playerHero.getEnergyMax() * 0.1));
         mobHero.setEnergy(-(mobHero.getEnergyMax() * 0.1));
-        System.out.println(playerHero.getHealth());
-        System.out.println(mobHero.getHealth());
-
     }
 }
